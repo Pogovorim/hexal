@@ -1,0 +1,521 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+html {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+q, blockquote {
+  quotes: none;
+}
+
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+a img {
+  border: none;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+@font-face {
+  font-family: 'latobold';
+  src: url("../fonts/lato.bold-webfont.woff2") format("woff2"), url("../fonts/lato.bold-webfont.woff") format("woff"), url("../fonts/lato.bold-webfont.ttf") format("truetype"), url("../fonts/lato.bold-webfont.svg#latobold") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'maven_proregular';
+  src: url("../fonts/mavenpro-regular-webfont.woff2") format("woff2"), url("../fonts/mavenpro-regular-webfont.woff") format("woff"), url("../fonts/mavenpro-regular-webfont.ttf") format("truetype"), url("../fonts/mavenpro-regular-webfont.svg#maven_proregular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'latoregular';
+  src: url("../fonts/lato.regular-webfont.woff2") format("woff2"), url("../fonts/lato.regular-webfont.woff") format("woff"), url("../fonts/lato.regular-webfont.ttf") format("truetype"), url("../fonts/lato.regular-webfont.svg#latoregular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Lato-Black';
+  src: url("../fonts/Lato-Black.eot");
+  src: url("../fonts/Lato-Black.eot?#iefix") format("embedded-opentype"), url("../fonts/Lato-Black.woff2") format("woff2"), url("../fonts/Lato-Black.woff") format("woff"), url("../fonts/Lato-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+}
+
+body {
+  font: 100% Arial, Helvetica, sans-serif;
+  min-width: 320px;
+  overflow-x: hidden;
+}
+
+header {
+  background: #222222;
+}
+
+h1 {
+  display: none;
+}
+
+.header-wrapper {
+  max-width: 960px;
+  height: 60px;
+  position: relative;
+  margin: 0 auto;
+}
+
+.header-wrapper:before {
+  content: "";
+  height: 0;
+  width: 0;
+  border-left: 45px solid white;
+  border-right: 45px solid white;
+  border-top: 26px solid #222222;
+  position: absolute;
+  bottom: -26px;
+  z-index: 20;
+  transform: translateX(-50%);
+  left: 50%;
+}
+
+.header-wrapper:after {
+  position: absolute;
+  content: url(assets/logo.PNG);
+  transform: translateX(-50%);
+  left: 50%;
+  bottom: -10px;
+  z-index: 30;
+}
+
+li.menu-item {
+  list-style-type: none;
+}
+
+.menu-links {
+  text-transform: uppercase;
+  text-decoration: none;
+  display: block;
+  padding: 10px;
+  font: 12px 'latobold';
+  color: #fff;
+}
+
+.menu-links:hover {
+  color: #219D84;
+  transition: 1s;
+}
+
+.clearfix:after {
+  content: "";
+  display: block;
+  height: 0;
+  clear: both;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/*** OUR HEXAGON  ***/
+
+.hexagon-container {
+  width: 980px;
+  height: 542px;
+  margin: 90px auto;
+  padding: 0px;
+}
+
+.hexagon {
+  width: 180px;
+  height: 206px;
+  transform: rotate(120deg);
+  overflow: hidden;
+  display: inline-block;
+}
+
+.layer1 {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-60deg);
+  overflow: hidden;
+}
+
+.layer2 {
+  width: 100%;
+  height: 100%;
+  background: #cccc;
+  transform: rotate(-60deg);
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-position: 50%;
+}
+
+.hexagon:hover {
+transform: rotate3d(2, 1, 0, 180deg); /* поворот на 50 градусов по оси X и на (50 * 1 / 2) градусов вокруг Y */
+}
+
+/*** End of OUR HEXAGON***/
+
+.top-sep1, .top-sep2, .middle-sep1, .middle-sep2, .middle-sep3, .middle-sep4 {
+	position: absolute;
+	background-color: #e5e9ec;
+}
+
+.top-sep1, .top-sep2 {
+	width: 552px;
+	height: 1px;
+	top: 70px;
+}
+
+.top-sep1 {
+	left: 30px;
+}
+
+.top-sep2 {
+	right: 30px;
+}
+
+.middle-sep1, .middle-sep2, .middle-sep3, .middle-sep4 {
+	width: 1px;
+	height: 102px;
+}
+
+.middle-sep1 {
+	top: 203px;
+	left: 265px;
+}
+
+.middle-sep2 {
+	top: 203px;
+	right: 265px;
+}
+
+.middle-sep3 {
+	top: 538px;
+	right: 265px;
+}
+
+.middle-sep4 {
+	top: 538px;
+	left: 265px;
+}
+
+
+.author-container {
+  width: 100%;
+  background: #2EB398;
+}
+
+.wrap-author-container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 15px 2% 15px 2%;
+}
+
+.author {
+  border-width: 1px;
+  border-color: #219D84;
+  border-style: none solid none solid;
+  padding: 10px 2% 10px 2%;
+}
+
+.author-photo {
+  margin-right: 20px;
+  position: relative;
+  list-style-type: none;
+  width: 170px;
+  height: 200px;
+  overflow: hidden;
+  transform: rotate(-60deg) skewY(30deg);
+}
+
+.author-pic {
+  width: 100%;
+  height: 100%;
+  transform: skewY(-30deg) rotate(60deg);
+}
+
+.author-name {
+  font: 30px 'maven_proregular';
+  color: #d7fcf5;
+}
+
+.about-work {
+  font: 18px 'maven_proregular';
+  color: #20816d;
+}
+
+.about-work-text {
+  font: 12px 'latoregular';
+  color: #d7fcf5;
+  margin-top: 15px;
+  line-height: 20px;
+  text-align: justify;
+}
+
+.social-icons-line {
+  display: inline-block;
+  float: right;
+  margin-top: 50px;
+  filter: sepia(0.9);
+}
+
+.social-icons {
+  width: 24px;
+  height: 24px;
+  background: url(assets/social.PNG) no-repeat;
+  display: block;
+  float: left;
+}
+
+.social-icons:hover {
+transform: rotate3d(2, 1, 0, 180deg);
+}
+
+.facebook {
+  background-position: 0 0;
+}
+
+.twitter {
+  background-position: -25px 0;
+}
+
+.google_plus {
+  background-position: -49px 0;
+}
+
+.pinterest {
+  background-position: -74px 0;
+}
+
+.linkedin {
+  background-position: -98px 0;
+}
+
+.dribbble {
+  background-position: -123px 0;
+}
+
+.get-in-touch {
+  width: 100%;
+  background: #323232;
+  padding: 20px 0;
+}
+
+.wrap-get-in-touch {
+  max-width: 960px;
+  margin: 0 auto;
+  border-width: 1px;
+  border-color: #2A2A2A;
+  border-style: solid none solid none;
+}
+
+.form-container {
+  padding: 15px 2% 15px 2%;
+}
+
+.form-header1 {
+  font: 30px 'maven_proregular';
+  color: #e0e0e0;
+}
+
+.form-header2 {
+  font: 18px  'maven_proregular';
+  color: #e0e0e0;
+  margin-bottom: 20px;
+}
+
+.feedback-form {
+  max-width: 660px;
+}
+
+.feedback-form-input {
+  width: 100%;
+  height: 40px;
+  border: none;
+  outline: none;
+  padding-left: 15px;
+  margin-bottom: 15px;
+  background: #454545;
+  color: #fff;
+}
+
+.textarea {
+  display: block;
+  width: 100%;
+  background: #454545;
+  border: none;
+  outline: none;
+  resize: none;
+  padding-left: 15px;
+  color: #fff;
+  margin-bottom: 15px;
+}
+
+.feedback-form-button {
+  width: 100%;
+  height: 36px;
+  text-align: center;
+  display: inline-block;
+  background: #219D84;
+  border: none;
+  outline: none;
+  color: #d7fcf5;
+  text-transform: uppercase;
+  font: 12px 'latobold';
+}
+
+.contact-info {
+  width: 100%;
+  margin: 20px 0;
+  text-align: justify;
+}
+
+.contact-block-text {
+  font: 12px 'latobold';
+  color: #bebebe;
+  line-height: 25px;
+}
+
+.quisque {
+  font: 12px 'Lato-Black';
+  color: #e0e0e0;
+}
+
+.callback p {
+  font: 12px 'latobold';
+  color: #bebebe;
+  position: relative;
+  padding-left: 30px;
+  margin-top: 10px;
+}
+
+.callback p:after {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.location:after {
+  content: url(assets/location.png);
+}
+
+.phone:after {
+  content: url(assets/phone.png);
+}
+
+.email:after {
+  content: url(assets/mail.png);
+}
+
+footer {
+  width: 100%;
+  background: #222222;
+}
+
+.footer-wrapper {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 10px 5px;
+}
+
+.footer-h2 {
+  font: 12px 'maven_proregular';
+  color: #454545;
+}
+
+
+
+@media screen and (min-width: 480px) {
+  .form-container {
+    padding: 20px;
+  }
+
+}
+
+@media screen and (min-width: 768px) {
+
+  .slide-menu {
+    width: 520px;
+    position: absolute;
+    transform: translateX(-50%);
+    left: 50%;
+    top: 20px;
+    bottom: 20px;
+    z-index: 3;
+    background: transparent;
+    transition: inherit;
+  }
+
+
+  li.menu-item {
+    list-style-type: none;
+    float: left;
+  }
+  li.menu-item:nth-child(2) {
+    margin-right: 200px;
+  }
+
+  .form-container {
+    padding: 40px;
+  }
+
+  .author-photo {
+    float: left;
+  }
+
+  .feedback-form {
+    float: left;
+    width: 70%;
+  }
+
+  .feedback-form-button {
+    width: 100px;
+    float: right;
+  }
+
+  .contact-info {
+    float: left;
+    width: 26%;
+    margin: 65px 0 0 15px;
+  }
+}
